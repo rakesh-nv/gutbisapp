@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gutbiss/screens/login_screen.dart';
+import 'package:gutbiss/authentication/login_screen.dart';
 import '../models/onboarding_content.dart';
 //import 'home_screen.dart';
 
