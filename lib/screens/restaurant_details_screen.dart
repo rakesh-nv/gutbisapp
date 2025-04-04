@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/menu_item.dart';
 import '../models/review.dart';
+import '../provider/favourite_provider.dart';
 import '../screens/menu_item_details_screen.dart';
 
 class RestaurantDetailsScreen extends StatefulWidget {
@@ -137,7 +139,7 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen>
           slivers: [
             // Restaurant Header
             SliverAppBar(
-              expandedHeight: 200,
+              expandedHeight: 240,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
@@ -161,6 +163,11 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(
+                      widget.restaurantName,
+                      style: const TextStyle(
+                          fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
                     Row(
                       children: [
                         const Icon(Icons.star, color: Colors.amber, size: 20),

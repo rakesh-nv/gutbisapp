@@ -18,14 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
     final List<Widget> screens = [
       // Home content
       _buildHomeContent(),
       const ordersScreen(),
       const FavoritesScreen(), // Add Favorites screen
     ];
+
 
     return Scaffold(
       body: SafeArea(
@@ -73,10 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: BorderRadius.circular(30),
             ),
             child: TextField(
-
               controller: _searchController,
               decoration: const InputDecoration(
-
                 hintText: 'Search for restaurants or dishes',
                 prefixIcon: Icon(Icons.search),
                 border: InputBorder.none,
@@ -168,7 +165,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         _buildCategoryItem('Samosa', 'assets/img/cat4.jpg'),
                         _buildCategoryItem('Chinese', 'assets/img/cat5.jpg'),
                         _buildCategoryItem('Cake', 'assets/img/cat6.jpg'),
-                        _buildCategoryItem('South Indian', 'assets/img/cat7.jpg'),
+                        _buildCategoryItem(
+                            'South Indian', 'assets/img/cat7.jpg'),
                         _buildCategoryItem('Sandwich', 'assets/img/cat8.jpg'),
                         _buildCategoryItem('Biryani', 'assets/img/cat1.jpg'),
                         _buildCategoryItem('Pizza', 'assets/img/cat2.jpg'),
@@ -176,7 +174,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         _buildCategoryItem('Samosa', 'assets/img/cat4.jpg'),
                         _buildCategoryItem('Chinese', 'assets/img/cat5.jpg'),
                         _buildCategoryItem('Cake', 'assets/img/cat6.jpg'),
-                        _buildCategoryItem('South Indian', 'assets/img/cat7.jpg'),
+                        _buildCategoryItem(
+                            'South Indian', 'assets/img/cat7.jpg'),
                         _buildCategoryItem('Sandwich', 'assets/img/cat8.jpg'),
                       ],
                     )
@@ -278,7 +277,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildPromoBanner(
-      String title, String subtitle, Color color, IconData icon) {
+    String title,
+    String subtitle,
+    Color color,
+    IconData icon,
+  ) {
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(16),
@@ -395,14 +398,8 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Restaurant Image
-            Container(
+            SizedBox(
               height: 150,
-              // decoration: BoxDecoration(
-              //  color: Colors.grey.shade100,
-              //   borderRadius: const BorderRadius.vertical(
-              //     top: Radius.circular(20),
-              //   ),
-              // ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
@@ -485,14 +482,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         size: 16,
                         color: Colors.grey.shade600,
                       ),
-                      // const SizedBox(width: 25),
-                      // Text(
-                      //   deliveryFee,
-                      //   style: const TextStyle(
-                      //     color: Colors.deepOrange,
-                      //     fontWeight: FontWeight.bold,
-                      //   ),
-                      // ),
                     ],
                   ),
                 ],

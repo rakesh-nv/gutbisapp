@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:gutbiss/provider/profile_provider.dart';
 import 'screens/splash_screen.dart';
 import 'package:get/get.dart';
-
+import 'package:provider/provider.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ProfileProvider()),
+        // Add other providers here
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
